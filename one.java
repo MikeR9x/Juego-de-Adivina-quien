@@ -2,18 +2,17 @@ import java.util.Random;
 import java.util.Scanner;
 public class one {
     public static void main(String[] args){
-        // Crear nuestra base de datos - names
 		String[] names = {"Laura", "Fer", "David", "Pedro", "Lorena", "Eduardo", "Paco", "Maria", "Lucy", "Diego"};
         Random random = new Random();
 		Persona[] personas = new Persona[10];
 		for(int k = 0; k < 10; k++){
 			int randomNum = random.nextInt(10);
-			while(names[randomNum] == "cero"){
+			while(names[randomNum] == "nada"){
 				randomNum = random.nextInt(10);
 			}
 			personas[k] = new Persona(){};
 			String randomName = names[randomNum];
-			names[randomNum] = "cero";
+			names[randomNum] = "nada";
 			personas[k].setName(randomName);
         }
         int contadorLentes = 0;
@@ -50,14 +49,14 @@ public class one {
                     switch(respuesta){
                         case 1:
                         System.out.println("las personas con el atributo tiene-lentes igual a la persona misteriosa son: ");
-                            for (int j = 0; j <= personas.length-1; j++) {
-                                if(personas[j].gettieneLentes() == personas[personaMisteriosa].gettieneLentes() && personas[j].getNombre() != null){
-                                    System.out.println(j + " " + personas[j].getNombre());
-                                } else{
-                                    personas[j].eliminarNombre();
-                                }
-                            } 
-                            break;
+                        for (int j = 0; j <= personas.length-1; j++) {
+                            if(personas[j].gettieneLentes() == personas[personaMisteriosa].gettieneLentes() && personas[j].getNombre() != null){
+                                System.out.println(j + " " + personas[j].getNombre());
+                            } else{
+                                personas[j].eliminarNombre();
+                            }
+                        } 
+                        break;
                         case 2:
                         System.out.println("las personas con el atributo tiene-ojos igual a la persona misteriosa son: ");
                         for (int j = 0; j <= personas.length-1; j++) {
